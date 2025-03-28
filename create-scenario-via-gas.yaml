@@ -1,0 +1,49 @@
+openapi: "3.1.0"
+info:
+  title: Crear Escenario en Make.com desde GAS
+  version: 1.0.0
+servers:
+  - url: https://script.google.com/macros/s/AKfycbzp6TW1fqbozyKu3sUPim0YFhOzoJyAdVNGP6dkqyVUCHXub6yMh5S_9KiN8vlVQDFuJg/exec
+paths:
+  /:
+    post:
+      operationId: createMakeScenario
+      summary: Crea un nuevo escenario en Make.com usando Google Apps Script
+      tags:
+        - make
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - teamId
+                - blueprint
+              properties:
+                name:
+                  type: string
+                  description: Nombre del escenario
+                teamId:
+                  type: string
+                  description: ID del equipo en Make
+                blueprint:
+                  type: string
+                  description: Blueprint JSON escapado (stringified)
+      responses:
+        '200':
+          description: Escenario creado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error inesperado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
