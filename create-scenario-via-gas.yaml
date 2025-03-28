@@ -31,19 +31,26 @@ paths:
                 blueprint:
                   type: string
                   description: Blueprint JSON escapado (stringified)
-      responses:
-        '200':
-          description: Escenario creado exitosamente
-          content:
-            application/json:
-              schema:
-                type: object
-        default:
-          description: Error inesperado
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
+responses:
+  '200':
+    description: Escenario creado exitosamente
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success:
+              type: boolean
+            id:
+              type: string
+            message:
+              type: string
+  default:
+    description: Error inesperado
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
