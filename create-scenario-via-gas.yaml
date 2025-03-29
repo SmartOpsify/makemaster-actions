@@ -3,7 +3,7 @@ info:
   title: Crear Escenario en Make.com desde GAS
   version: 1.0.0
 servers:
-  - url: https://script.google.com/macros/s/AKfycbxn1ekDQcdAZSK0pm1BFSf0WFEX3KZcol6Fj1781EEgjzrrmAbafhiDzAc42ivYPi-w/exec
+  - url: https://script.google.com/macros/s/AKfycbwtvN3VoLYPomM3OZEipy84PZUXZqWQ2oPJYT5y7O9m5nLszq-v1ZqeU36cwVjLGfF2mA/exec
     post:
       operationId: createMakeScenario
       summary: Crea un nuevo escenario en Make.com usando Google Apps Script
